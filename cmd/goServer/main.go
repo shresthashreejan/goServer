@@ -6,8 +6,8 @@ import (
 )
 
 func main() {
-	fileServer := http.FileServer(http.Dir("./static"))
-	http.Handle("/", fileServer)
+	index := http.FileServer(http.Dir("./static"))
+	http.Handle("/", index)
 	http.HandleFunc("/hello", serveHTML)
 	http.HandleFunc("/form", serveHTML)
 	http.HandleFunc("/submit", submit)
